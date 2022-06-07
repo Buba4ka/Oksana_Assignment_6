@@ -17,9 +17,8 @@ public class SalesAnalysisApplication {
 
 		service.salesDataMapping(list, "model3.csv" );
 
-		System.out.println("_______");
 		service.salesDataMapping(list, "modelS.csv");
-		System.out.println("_______");
+		
 		service.salesDataMapping(list, "modelX.csv");
 
 

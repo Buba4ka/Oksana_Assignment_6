@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="22e0205a-c636-4c1c-9d53-b9cd9b3c1545" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/codercampus/assignment6/SalesAnalysisApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codercampus/assignment6/SalesAnalysisApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/codercampus/assignment6/SalesList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codercampus/assignment6/SalesList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/codercampus/assignment6/service/AnalysisService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codercampus/assignment6/service/AnalysisService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/codercampus/assignment6/service/AnalysisServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codercampus/assignment6/service/AnalysisServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/codercampus/assignment6/service/FileServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codercampus/assignment6/service/FileServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +74,7 @@
       <option name="presentableId" value="Default" />
       <updated>1654206571798</updated>
       <workItem from="1654206573310" duration="16455000" />
-      <workItem from="1654374355895" duration="40132000" />
+      <workItem from="1654374355895" duration="40795000" />
     </task>
     <servers />
   </component>
