@@ -1,12 +1,7 @@
 package com.codercampus.assignment6.service;
 
 import com.codercampus.assignment6.SalesList;
-
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.*;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
 
 public class AnalysisServiceImpl implements AnalysisService{
 
@@ -15,32 +10,42 @@ public class AnalysisServiceImpl implements AnalysisService{
 
         FileService service = new FileServiceImpl();
         salesData = service.readSalesFile(fileName);
+        salesCount(salesData);
 
-//        List<SalesList> year2017 = salesData.stream()
-//                .filter(s -> s.getDate().getYear())
-//                .("2017")
-//                .collect(Collectors.toList());
+        Integer max = salesData.stream().map(s -> s.getQuantity()).max(Integer::compare).get();
+        Integer min = salesData.stream().map(s -> s.getQuantity()).min(Integer::compare).get();
 
-//        List <Integer> dollars = salesData.stream().map(m -> m.getSalesDollars()).collect(Collectors.toList());
-//        Integer max = dollars.stream().max(Comparator.comparing(Integer::intValue)).get();
-//        boolean bestMonth = salesData.stream().allMatch(d -> d.getSalesDollars().equals(max));
-//        Integer min = dollars.stream().min(Comparator.comparing(Integer::intValue)).get();
-//        boolean worstMonth = salesData.stream().allMatch(d -> d.getSalesDollars().equals(min));
+        String [] model = fileName.split("\\.");
 
+        for (SalesList s: salesData) {
+            if (s.getQuantity().equals(max)) {
+                System.out.println("The best month for " + model[0] + "was: " + s.getDate());
+            } else if (s.getQuantity().equals(min)) {
+                System.out.println("The worst month for " + model[0] + "was: " + s.getDate());
+            }
+        }
 
-//        if (bestMonth) {
-//            System.out.println("The best month was: " + salesData.get(salesData.indexOf(max)).getDate());
-//        }
-//        if (worstMonth) {
-//            System.out.println("The worst month was: " + salesData.get(salesData.indexOf(min)).getDate());
-//
-//        }
+    }
+    @Override
+    public void salesCount(List<SalesList> salesData) {
 
+        Integer year = 0;
+        List<Integer> years = new ArrayList<>();
 
+        for (SalesList s: salesData) {
+            year = s.getDate().getYear();
 
+            if (!years.contains(year)) {
+                years.add(year);
+            }
 
+        }
 
+        for (Integer n: years) {
+            Integer sales = salesData.stream().filter(y -> y.getDate().getYear() == n).mapToInt(a -> a.getQuantity()).sum();
 
+            System.out.println(n + " -> " + sales);
+        }
 
     }
 

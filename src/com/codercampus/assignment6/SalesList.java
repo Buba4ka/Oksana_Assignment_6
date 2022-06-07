@@ -1,35 +1,33 @@
 package com.codercampus.assignment6;
 
-import java.time.LocalDate;
+import java.time.YearMonth;
+import java.time.format.DateTimeFormatter;
 
 public class SalesList {
 
-    private LocalDate date;
-    private Integer salesDollars;
+    private YearMonth date;
+    private Integer quantity;
 
-    public SalesList(){
 
-    }
-
-    public SalesList(LocalDate date, Integer amount) {
+    public SalesList(YearMonth date, Integer quantity) {
         this.date = date;
-        this.salesDollars = amount;
+        this.quantity = quantity;
     }
 
-    public LocalDate getDate() {
+    public YearMonth getDate() {
         return date;
     }
 
-    public void setDate(LocalDate date) {
+    public void setDate(YearMonth date) {
         this.date = date;
     }
 
-    public Integer getSalesDollars() {
-        return salesDollars;
+    public Integer getQuantity() {
+        return quantity;
     }
 
-    public void setSalesDollars(Integer salesDollars) {
-        this.salesDollars = salesDollars;
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
     }
 
 

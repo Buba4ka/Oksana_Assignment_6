@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.time.LocalDate;
+import java.time.YearMonth;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 
@@ -31,12 +32,14 @@ public class FileServiceImpl implements FileService {
 			while ((raw = fileReader.readLine()) != null) {
 				String [] data = raw.split(",");
 				String d = data[0];
+				//d= d+ "-01";
 
 
-				DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM-yy", Locale.US);
-				DateFormat date = DateFormat.parse(d,formatter);
-				Integer amount =  Integer.valueOf(data[0]);
-				SalesList salesList = new SalesList(date, amount);
+				//DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMM-yy-dd", Locale.US);
+				YearMonth date = YearMonth.parse(d, DateTimeFormatter.ofPattern("MMM-yy"));
+				//LocalDate date = LocalDate.parse(d,formatter);
+				Integer count =  Integer.valueOf(data[1]);
+				SalesList salesList = new SalesList(date,count);
 				fileContent.add(index,salesList);
 				index++;
 
@@ -57,7 +60,7 @@ public class FileServiceImpl implements FileService {
 			}
 		}
 
-		System.out.println(fileContent);
+		//fileContent.stream().forEach(s -> System.out.println(s.getQuantity()));
 
 		return fileContent;
 	}
